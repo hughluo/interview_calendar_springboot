@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +31,7 @@ public class InterviewerController {
     }
 
     @PostMapping("/add")
-    public String addNewInterviewer(@RequestBody String firstName, @RequestBody String lastName, @RequestBody String email) {
+    public String addNewInterviewer(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String email) {
         Interviewer n = new Interviewer(firstName, lastName, email);
         repository.save(n);
 
